@@ -1,0 +1,28 @@
+.controls {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 2px;
+    /* width: 300px;
+    height: 300px; 
+    border: 2px solid black; */
+    margin-top: 10px;
+  }
+  
+  .grid-item {
+    background: lightblue;
+    color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    /* border: 1px solid black; */
+    aspect-ratio: 1/1;
+  }
+  

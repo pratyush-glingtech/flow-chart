@@ -1,0 +1,15 @@
+<div class="controls">
+    <label for="gridSize">Grid Size:</label>
+    <input id="gridSize" type="number" [value]="gridSize" (input)="updateGridSize($event)" min="1" />
+  </div>
+  
+  <div 
+    class="grid"
+    [style.grid-template-columns]="'repeat(' + gridSize + ', 1fr)'"
+    [style.grid-template-rows]="'repeat(' + gridSize + ', 1fr)'"
+  >
+    @for (item of items; track item) {
+      <div class="grid-item">{{ item }}</div>
+    }
+  </div>
+  

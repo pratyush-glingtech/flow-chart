@@ -1,19 +1,25 @@
 import { Component } from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-grids',
   templateUrl: './grids.component.html',
   styleUrls: ['./grids.component.css'],
-  imports: [MatInputModule, MatFormFieldModule]
+  imports: [MatInputModule, MatFormFieldModule, MatSelectModule]
 })
+
 export class GridsComponent {
   outerGridSize: number = 20; // Fixed outer grid size (20x20)
   innerGridSize: number = 4;  // Fixed inner grid size (4x4)
   cellSize: number = 20; // Default size of inner grid cells in pixels
   items: number[] = [];
   innerGridItems: number[] = [];
+
+  colors: string[] = ['#8f8e8e', '#5a5959', '#fa5a5a', '#43f870', '#5e5bf7', '#f75b8f'];
+  colorsName: string[] = ['Gray', 'Charcoal Gray', 'Coral Red', 'Lime Green', ' Electric Blue', 'Hot Pink']
+  selectedColor: string = this.colors[0]; 
 
   constructor() {
     this.generateGrid();
@@ -38,5 +44,9 @@ export class GridsComponent {
   generateInnerGridItems() {
     const totalInnerItems = this.innerGridSize * this.innerGridSize;
     this.innerGridItems = Array.from({ length: totalInnerItems }, (_, i) => i + 1);
+  }
+
+  updateGridColor(color: string) {
+    this.selectedColor = color;
   }
 }

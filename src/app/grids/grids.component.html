@@ -8,8 +8,8 @@
         <mat-label>Select Grid Background Color</mat-label>
         <mat-select [(value)]="selectedColor" (selectionChange)="updateGridColor($event.value)">
             @for (color of colors; track color) {
-                <mat-option [value]="color">
-                    <span [style.background]="color" class="color-box"></span> {{ color }}
+                <mat-option [value]="color.code">
+                    <span [style.background]="color.code" class="color-box"></span> {{ color.name }}
                   </mat-option>
             }
         </mat-select>

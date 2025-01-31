@@ -13,13 +13,19 @@ import { MatSelectModule } from '@angular/material/select';
 export class GridsComponent {
   outerGridSize: number = 20; // Fixed outer grid size (20x20)
   innerGridSize: number = 4;  // Fixed inner grid size (4x4)
-  cellSize: number = 20; // Default size of inner grid cells in pixels
+  cellSize: number = 13; // Default size of inner grid cells in pixels
   items: number[] = [];
   innerGridItems: number[] = [];
 
-  colors: string[] = ['#8f8e8e', '#5a5959', '#fa5a5a', '#43f870', '#5e5bf7', '#f75b8f'];
-  colorsName: string[] = ['Gray', 'Charcoal Gray', 'Coral Red', 'Lime Green', ' Electric Blue', 'Hot Pink']
-  selectedColor: string = this.colors[0]; 
+  colors: { name: string, code: string }[] = [
+    { name: 'Gray', code: '#8f8e8e' },
+    { name: 'Charcoal Gray', code: '#5a5959' },
+    { name: 'Coral Red', code: '#fa5a5a' },
+    { name: 'Lime Green', code: '#43f870' },
+    { name: 'Electric Blue', code: '#5e5bf7' },
+    { name: 'Hot Pink', code: '#f75b8f' }
+  ];
+  selectedColor: string = this.colors[0].code; 
 
   constructor() {
     this.generateGrid();

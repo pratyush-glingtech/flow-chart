@@ -1,17 +1,25 @@
 <div class="controls">
     <mat-form-field>
-        <mat-label>Grid Size</mat-label>
-        <input matInput type="number" [value]="gridSize" (input)="updateGridSize($event)" min="4"  >
+      <mat-label>Inner Grid Cell Size (px)</mat-label>
+      <input matInput type="number" [value]="cellSize" (input)="updateCellSize($event)" min="10">
     </mat-form-field>
-  </div>
+</div>
   
-  <div 
-    class="grid"
-    [style.grid-template-columns]="'repeat(' + gridSize + ', 1fr)'"
-    [style.grid-template-rows]="'repeat(' + gridSize + ', 1fr)'"
-  >
+<div class="grid" [style.grid-template-columns]="'repeat(' + outerGridSize + ', 1fr)'"
+[style.grid-template-rows]="'repeat(' + outerGridSize + ', 1fr)'"
+>
     @for (item of items; track item) {
-      <div class="grid-item"></div>
+        <div class="grid-item">
+            <div 
+                class="inner-grid"
+                [style.grid-template-columns]="'repeat(' + innerGridSize + ', ' + cellSize + 'px)'"
+                [style.grid-template-rows]="'repeat(' + innerGridSize + ', ' + cellSize + 'px)'"
+            >
+                @for (innerItem of innerGridItems; track innerItem) {
+                <div class="inner-grid-item"></div>
+                }
+            </div>
+        </div>
     }
-  </div>
+</div>
   

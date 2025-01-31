@@ -1,6 +1,8 @@
 <div class="controls">
-    <label for="gridSize">Grid Size:</label>
-    <input id="gridSize" type="number" [value]="gridSize" (input)="updateGridSize($event)" min="1" />
+    <mat-form-field>
+        <mat-label>Grid Size</mat-label>
+        <input matInput type="number" [value]="gridSize" (input)="updateGridSize($event)" min="4"  >
+    </mat-form-field>
   </div>
   
   <div 
@@ -9,7 +11,7 @@
     [style.grid-template-rows]="'repeat(' + gridSize + ', 1fr)'"
   >
     @for (item of items; track item) {
-      <div class="grid-item">{{ item }}</div>
+      <div class="grid-item"></div>
     }
   </div>
   

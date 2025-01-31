@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-grids',
   templateUrl: './grids.component.html',
   styleUrls: ['./grids.component.css'],
+  imports: [MatInputModule, MatFormFieldModule]
 })
 export class GridsComponent {
   gridSize: number = 3; // Default 3x3 grid

@@ -11,7 +11,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 export class GridsComponent {
   outerGridSize: number = 20; // Fixed outer grid size (20x20)
   innerGridSize: number = 4;  // Fixed inner grid size (4x4)
-  cellSize: number = 20; // Default size of inner grid cells in pixels
+  cellSize: number = 13; // Default size of inner grid cells in pixels
   items: number[] = [];
   innerGridItems: number[] = [];
 

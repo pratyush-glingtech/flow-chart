@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-grids',
   templateUrl: './grids.component.html',
   styleUrls: ['./grids.component.css'],
-  imports: [MatInputModule, MatFormFieldModule]
+  imports: [MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule]
 })
 export class GridsComponent {
   outerGridSize: number = 20; // Fixed outer grid size (20x20)
@@ -39,4 +41,17 @@ export class GridsComponent {
     const totalInnerItems = this.innerGridSize * this.innerGridSize;
     this.innerGridItems = Array.from({ length: totalInnerItems }, (_, i) => i + 1);
   }
+
+  downloadYaml() {
+    const yamlFilePath = 'assets/demo.yml';
+  
+    // Create an invisible link and trigger download
+    const a = document.createElement('a');
+    a.href = yamlFilePath;
+    a.download = 'demo.yml';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+  
 }

@@ -3,12 +3,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-grids',
   templateUrl: './grids.component.html',
   styleUrls: ['./grids.component.css'],
-  imports: [MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule]
+  imports: [MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, FormsModule]
 })
 export class GridsComponent {
   outerGridSize: number = 20; // Fixed outer grid size (20x20)
@@ -16,6 +17,7 @@ export class GridsComponent {
   cellSize: number = 13; // Default size of inner grid cells in pixels
   items: number[] = [];
   innerGridItems: number[] = [];
+  yamlInput: string = '';
 
   constructor() {
     this.generateGrid();
@@ -43,15 +45,26 @@ export class GridsComponent {
   }
 
   downloadYaml() {
-    const yamlFilePath = 'assets/demo.yml';
-  
-    // Create an invisible link and trigger download
+    if (!this.yamlInput.trim()) {
+      alert("Please enter some data before downloading.");
+      return;
+    }
+
+    // Create YAML content dynamically
+    const yamlContent = `data:\n  user_input: "${this.yamlInput}"\n  grid:\n    outer_size: ${this.outerGridSize}\n    inner_size: ${this.innerGridSize}\n    cell_size: ${this.cellSize}`;
+
+    // Create a Blob object from YAML string
+    const blob = new Blob([yamlContent], { type: 'text/yaml' });
+    const url = URL.createObjectURL(blob);
+
+    // Create and trigger download link
     const a = document.createElement('a');
-    a.href = yamlFilePath;
-    a.download = 'demo.yml';
+    a.href = url;
+    a.download = 'generated.yaml';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   }
   
 }

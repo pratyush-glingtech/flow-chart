@@ -5,12 +5,19 @@
       <input matInput type="number" [value]="cellSize" (input)="updateCellSize($event)" min="10">
     </mat-form-field>
 
-    <!-- download button -->
-    <div class="example-button-container">
-        <button mat-fab aria-label="icon button with a download icon" (click)="downloadYaml()">
-          <mat-icon>download</mat-icon>
-        </button>
-      </div>
+    <div class="yml-container">
+        <mat-form-field>
+            <mat-label>Enter YAML Data</mat-label>
+            <input matInput [(ngModel)]="yamlInput" placeholder="Type something...">
+        </mat-form-field>
+        
+        <!-- Download Button -->
+        <div class="example-button-container">
+            <button mat-fab aria-label="Download YAML" (click)="downloadYaml()">
+                <mat-icon>download</mat-icon>
+            </button>
+        </div>
+    </div>
 
 </div>
   

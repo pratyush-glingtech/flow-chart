@@ -1,3 +1,4 @@
+<!-- controll panel -->
 <div class="controls">
     <mat-form-field>
       <mat-label>Inner Grid Cell Size (px)</mat-label>
@@ -16,19 +17,18 @@
       </mat-form-field>
 </div>
   
-<div class="grid" [style.grid-template-columns]="'repeat(' + outerGridSize + ', 1fr)'" 
+<!-- grid/graph -->
+<div class="svg-grid-container">
+    <div class="grid" [style.grid-template-columns]="'repeat(' + outerGridSize + ', 1fr)'"
     [style.grid-template-rows]="'repeat(' + outerGridSize + ', 1fr)'" [style.background]="selectedColor">
-  @for (item of items; track item) {
-
-    <div class="grid-item">
-      <div class="inner-grid" [style.grid-template-columns]="'repeat(' + innerGridSize + ', ' + cellSize + 'px)'" 
-        [style.grid-template-rows]="'repeat(' + innerGridSize + ', ' + cellSize + 'px)'">
-
-        @for (innerItem of innerGridItems; track innerItem) {
-          <div class="inner-grid-item"></div>
-        }
-      </div>
+        @for (item of items; track item) {
+            <div class="grid-item">
+                <div class="inner-grid" [style.grid-template-columns]="'repeat(' + innerGridSize + ', ' + cellSize + 'px)'" [style.grid-template-rows]="'repeat(' + innerGridSize + ', ' + cellSize + 'px)'">
+                @for (innerItem of innerGridItems; track innerItem) {
+                    <div class="inner-grid-item"></div>
+                }
+            </div>
+        </div>
+    }
     </div>
-  }
 </div>
-  

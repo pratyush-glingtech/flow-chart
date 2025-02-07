@@ -1,29 +1,51 @@
-.controls {
-    margin-bottom: 10px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-  
-  .grid {
+.grid {
     display: grid;
-    gap: 2px;
-    /* width: 300px;
-    height: 300px; 
-    border: 2px solid black; */
-    background-color: purple;
-    margin-top: 10px;
-  }
+    gap: 1px; 
+    background-color: #8f8e8e;
+    max-width: 100%; 
+    width: fit-content; 
+    margin: 0 auto; 
+  } 
+
+  .grid-item { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    aspect-ratio: 1/1; 
+    background-color: #f9f9f9; 
+  } 
   
-  .grid-item {
-    background: lightblue;
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-weight: bold;
-    /* border: 1px solid black; */
-    aspect-ratio: 1/1;
+  /* Inner grid within each grid item */
+  .inner-grid { 
+    display: grid; 
+    /* gap: 1px; */ 
+  } 
+  
+  /* Individual inner grid items */ 
+  .inner-grid-item { 
+    background-color: #e0e0e0; 
+    border: 1px solid #bbbaba; 
   }
+
+  .svg-grid-container {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.svg-grid-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* padding: 10px; */
+    height: 100%;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyBzdHlsZT0iY29sb3Itc2NoZW1lOiBsaWdodCBkYXJrOyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gMCA0IEwgMTYgNCBNIDQgMCBMIDQgMTYgTSAwIDggTCAxNiA4IE0gOCAwIEwgOCAxNiBNIDAgMTIgTCAxNiAxMiBNIDEyIDAgTCAxMiAxNiIgZmlsbD0ibm9uZSIgc3R5bGU9InN0cm9rZTpsaWdodC1kYXJrKCNkMGQwZDAsICM0MjQyNDIpOyIgc3Ryb2tlPSIjZDBkMGQwIiBvcGFjaXR5PSIwLjIiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik0gMTYgMCBMIDAgMCAwIDE2IiBmaWxsPSJub25lIiBzdHlsZT0ic3Ryb2tlOmxpZ2h0LWRhcmsoI2QwZDBkMCwgIzQyNDI0Mik7IiBzdHJva2U9IiNkMGQwZDAiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==");
+    background-position: 0 0;
+    background-size: 16px 16px;
+    z-index: -1;
+}
+
+  
   

@@ -1,7 +1,23 @@
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .color-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+
 .grid {
     display: grid;
     gap: 1px; 
-    background-color: #8f8e8e;
+    /* background-color: #f75b8f; */
     max-width: 100%; 
     width: fit-content; 
     margin: 0 auto; 

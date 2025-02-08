@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-grids',
   templateUrl: './grids.component.html',
   styleUrls: ['./grids.component.css'],
-  imports: [MatInputModule, MatFormFieldModule, MatSelectModule]
+  imports: [MatInputModule, MatFormFieldModule, MatSelectModule, MatIconModule, MatButtonModule, FormsModule]
 })
 
 export class GridsComponent {
@@ -16,6 +19,7 @@ export class GridsComponent {
   cellSize: number = 13; // Default size of inner grid cells in pixels
   items: number[] = [];
   innerGridItems: number[] = [];
+  yamlInput: string = '';
 
   colors: { name: string, code: string }[] = [
     { name: 'Gray', code: '#8f8e8e' },
@@ -52,6 +56,29 @@ export class GridsComponent {
     this.innerGridItems = Array.from({ length: totalInnerItems }, (_, i) => i + 1);
   }
 
+  downloadYaml() {
+    if (!this.yamlInput.trim()) {
+      alert("Please enter some data before downloading.");
+      return;
+    }
+
+    // Create YAML content dynamically
+    const yamlContent = `data:\n  user_input: "${this.yamlInput}"\n  grid:\n    outer_size: ${this.outerGridSize}\n    inner_size: ${this.innerGridSize}\n    cell_size: ${this.cellSize}`;
+
+    // Create a Blob object from YAML string
+    const blob = new Blob([yamlContent], { type: 'text/yaml' });
+    const url = URL.createObjectURL(blob);
+
+    // Create and trigger download link
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'generated.yaml';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+  
   updateGridColor(color: string) {
     this.selectedColor = color;
   }

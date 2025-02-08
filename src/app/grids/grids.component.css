@@ -1,7 +1,9 @@
+
 .controls {
     display: flex;
+    justify-content: space-between;
     gap: 10px;
-    margin-bottom: 15px;
+    margin: 15px;
   }
   
   .color-box {
@@ -12,7 +14,6 @@
     margin-right: 10px;
     vertical-align: middle;
   }
-  
 
 .grid {
     display: grid;
@@ -63,5 +64,14 @@
     z-index: -1;
 }
 
+.example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 140px;
+  }
   
+  .yml-container{
+    display: flex;
+    
+  }
   

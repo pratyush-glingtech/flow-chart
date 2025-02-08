@@ -4,13 +4,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-grids',
   templateUrl: './grids.component.html',
   styleUrls: ['./grids.component.css'],
-  imports: [MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, FormsModule]
+  imports: [MatInputModule, MatFormFieldModule, MatSelectModule, MatIconModule, MatButtonModule, FormsModule]
 })
+
 export class GridsComponent {
   outerGridSize: number = 20; // Fixed outer grid size (20x20)
   innerGridSize: number = 4;  // Fixed inner grid size (4x4)
@@ -18,6 +20,16 @@ export class GridsComponent {
   items: number[] = [];
   innerGridItems: number[] = [];
   yamlInput: string = '';
+
+  colors: { name: string, code: string }[] = [
+    { name: 'Gray', code: '#8f8e8e' },
+    { name: 'Charcoal Gray', code: '#5a5959' },
+    { name: 'Coral Red', code: '#fa5a5a' },
+    { name: 'Lime Green', code: '#43f870' },
+    { name: 'Electric Blue', code: '#5e5bf7' },
+    { name: 'Hot Pink', code: '#f75b8f' }
+  ];
+  selectedColor: string = this.colors[0].code; 
 
   constructor() {
     this.generateGrid();
@@ -67,4 +79,7 @@ export class GridsComponent {
     URL.revokeObjectURL(url);
   }
   
+  updateGridColor(color: string) {
+    this.selectedColor = color;
+  }
 }

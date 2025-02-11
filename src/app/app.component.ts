@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { GridsComponent } from "./grids/grids.component";
+import { SidebarComponent } from "./sidebar/sidebar.component";
 
 @Component({
   selector: 'app-root',
-  imports: [GridsComponent],
+  imports: [SidebarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

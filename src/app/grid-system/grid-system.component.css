@@ -29,6 +29,9 @@
     position: relative;
     width: fit-content;
     margin: 0 auto;
+    /* max-width: 100%;
+    max-height: 100vh;
+    overflow: auto; */
 }
 
 .svg-grid-container::before {
@@ -42,4 +45,9 @@
     background-position: 0 0;
     background-size: 16px 16px;
     z-index: -1;
+}
+
+.grid-layout{
+    display: flex;
+
 }

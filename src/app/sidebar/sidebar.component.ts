@@ -8,7 +8,7 @@ import { ControlPanelComponent } from '../control-panel/control-panel.component'
 
 @Component({
   selector: 'app-sidebar',
-  imports: [GridsComponent, MatIconModule, MatToolbarModule, MatSidenavModule, MatButtonModule],
+  imports: [ MatIconModule, MatToolbarModule, MatSidenavModule, MatButtonModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })

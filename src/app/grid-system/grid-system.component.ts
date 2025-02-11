@@ -1,9 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SidebarComponent } from "../sidebar/sidebar.component";
 
 @Component({
   selector: 'app-grid-system',
   templateUrl: './grid-system.component.html',
-  styleUrls: ['./grid-system.component.css']
+  styleUrls: ['./grid-system.component.css'],
+  imports: [SidebarComponent]
 })
 export class GridSystemComponent implements OnInit {
   @Input() outerGridSize: number = 20;

@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
+import { ControlPanelComponent } from '../control-panel/control-panel.component';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,5 +13,5 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
-
+  
 }

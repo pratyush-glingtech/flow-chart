@@ -1,0 +1,30 @@
+.controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 15px;
+}
+
+.color-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.users-grid-input {
+    display: flex;
+    gap: 15px;
+}
+
+.example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 140px;
+}
+
+.yml-container {
+    display: flex;
+}

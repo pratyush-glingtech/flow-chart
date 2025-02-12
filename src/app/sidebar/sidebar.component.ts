@@ -1,17 +1,13 @@
-import { Component } from '@angular/core';
-import { GridsComponent } from '../grids/grids.component';
-import { MatIconModule } from '@angular/material/icon';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatButtonModule} from '@angular/material/button';
-import { ControlPanelComponent } from '../control-panel/control-panel.component';
+import { Component, signal } from '@angular/core';
+import { MaterialModule } from '../material.module';
+import { SidebarCategoriesComponent } from '../sidebar-categories/sidebar-categories.component';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [ MatIconModule, MatToolbarModule, MatSidenavModule, MatButtonModule],
+  imports: [SidebarCategoriesComponent, MaterialModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
-  
+
 }

@@ -1,0 +1,24 @@
+<mat-accordion>
+    @for (key of keys; track $index) {
+        <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header>
+            <mat-panel-title> {{ key }} </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div class="catergories-container">
+                @for (i of getRange(categories[key].length); track $index) {
+                    
+                    <div class="button-container">
+                        <button mat-fab aria-label="category">
+                            <mat-icon>
+                                <span class="material-symbols-outlined"> add </span>
+                            </mat-icon>
+                        </button>
+                    </div>
+                }
+            </div>
+           
+        </mat-expansion-panel>
+    }
+</mat-accordion>
+

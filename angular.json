@@ -22,6 +22,7 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/assets",
+              "https://fonts.googleapis.com/icon?family=Material+Icons",
               {
                 "glob": "**/*",
                 "input": "public"
@@ -81,6 +82,7 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+              "https://fonts.googleapis.com/icon?family=Material+Icons",
                "src/assets",
               {
                 "glob": "**/*",

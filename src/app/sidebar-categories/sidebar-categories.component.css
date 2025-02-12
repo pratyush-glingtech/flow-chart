@@ -1,0 +1,14 @@
+mat-expansion-panel{
+    background-color: #9b9a9a;
+}
+
+.catergories-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+   background-color: grey;
+   color: white;
+}

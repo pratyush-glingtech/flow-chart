@@ -10,7 +10,7 @@ import { SidebarComponent } from "../sidebar/sidebar.component";
 export class GridSystemComponent implements OnInit {
   @Input() outerGridSize: number = 20;
   @Input() innerGridSize: number = 4;
-  @Input() cellSize: number = 13;
+  @Input() cellSize: number = 10;
   @Input() selectedColor: string = '#8f8e8e';
 
   items: number[] = [];

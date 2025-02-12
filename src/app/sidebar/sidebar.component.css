@@ -4,6 +4,10 @@
     width: 250px;
 }
 
+mat-sidenav{
+    border-radius: 15px;
+}
+
 .sidenav-container{
     height: 100%;
     /* width: 300px; */

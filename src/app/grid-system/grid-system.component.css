@@ -1,7 +1,7 @@
 .grid {
     display: grid;
     gap: 1px;
-    max-width: 100%;
+    max-width: 1000%;
     width: fit-content;
     margin: 0 auto;
 }
@@ -29,9 +29,9 @@
     position: relative;
     width: fit-content;
     margin: 0 auto;
-    /* max-width: 100%;
+    max-width: 100%;
     max-height: 100vh;
-    overflow: auto; */
+    overflow: auto; 
 }
 
 .svg-grid-container::before {

@@ -1,0 +1,37 @@
+<div class="control-panel-container">
+
+<h1>WorkFlow Editor</h1>
+<div class="controls">
+    <div class="users-grid-input">
+      <mat-form-field>
+        <mat-label>Inner Grid Cell Size (px)</mat-label>
+        <input matInput type="number" [value]="cellSize" (input)="updateCellSize($event)" min="7">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Select Grid Background Color</mat-label>
+        <mat-select [(value)]="selectedColor" (selectionChange)="updateGridColor($event.value)">
+          @for (color of colors; track color) {
+            <mat-option [value]="color.code">
+              <span [style.background]="color.code" class="color-box"></span> {{ color.name }}
+            </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+  
+    <div class="yml-container">
+      <mat-form-field>
+        <mat-label>Enter YAML Data</mat-label>
+        <input matInput [(ngModel)]="yamlInput" placeholder="Type something...">
+      </mat-form-field>
+      <div class="button-container">
+        <button mat-fab aria-label="Download YAML" (click)="downloadYaml()">
+          <mat-icon>download</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+  

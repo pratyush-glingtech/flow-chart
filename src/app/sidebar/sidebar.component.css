@@ -5,10 +5,14 @@
 }
 
 mat-sidenav{
-    border-radius: 15px;
+    border-radius: 0 15px 15px 0;
 }
 
 .sidenav-container{
     height: 100%;
     /* width: 300px; */
+}
+
+p{
+    padding-left: 15px;
 }
